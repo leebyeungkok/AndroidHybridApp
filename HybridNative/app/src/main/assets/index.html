@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script src="native.js"></script>
+    <script>
+        function onAlert(){
+            alert('Alert을 호출합니다.');
+        }
+        function onConfirm(){
+            let result = confirm('Confirm을 호출합니다.');
+            alert(result + '');
+        }
+
+        var callbackPos = function(latitude, longitude){
+            alert(latitude + ' ' + longitude);
+        }
+        function onCallLocation(){
+            callLocationPos('callbackPos');
+        }
+
+        function onCallSMS(){
+            callSms('01096119687', '안녕하세요');
+        }
+        function onCallCamera(){
+            callCamera();
+        }
+    </script>
+</head>
+<body>
+    <br>
+    <BR>
+    <h2>Hello Hybrid!!</h2>
+    <button style="font-size:20px" onclick="javascript:onAlert()">Alert</button>
+    <button style="font-size:20px" onclick="javascript:onConfirm()">Confirm</button>
+    <button style="font-size:20px" onclick="javascript:onCallSMS()">SMS</button>
+    <button style="font-size:20px" onclick="javascript:onCallLocation()">Location</button>
+    <button style="font-size:20px" onclick="javascript:onCallCamera()">Camera</button>
+</body>
+</html>
